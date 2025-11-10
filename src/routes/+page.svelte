@@ -65,12 +65,13 @@ const techStack = [
 		highlight:
 			'Monitoruję worker’y Celery w Grafanie/Sentry, pilnując SLA synchronizacji assetów i billingów.'
 	},
-	{
-		title: 'Data & Analytics',
-		category: 'Data',
-		description: 'Polars, Pandas, TimescaleDB, PostgreSQL i CouchDB dla raportów oraz dashboardów ERP.',
-		highlight: 'Projektuję hurtownie danych i raporty SQL dla WMS oraz CRM.'
-	},
+		{
+			title: 'Data & Analytics',
+			category: 'Data',
+			description: 'Polars, Pandas, TimescaleDB, PostgreSQL i CouchDB dla raportów oraz dashboardów ERP.',
+			highlight:
+				'Utrzymuję hurtownie danych, synchronizuję ERP/WMS/CRM i projektuję pipeline’y oraz raporty SQL.'
+		},
 	{
 		title: 'Cloud & Containers',
 		category: 'Platform',
@@ -104,7 +105,9 @@ const experience = [
 			'Integruję backendy platform produkcyjnych (JIRA, Ftrack, Brandfolder) z pipeline’ami CGI i tworzę rozszerzenia pod potrzeby zespołów artystycznych.',
 		metrics: [
 			'Orkiestracja usług Celery/FastAPI monitorowanych w Grafanie i Prometheusie',
-			'Wdrożenie Helix Core oraz narzędzi VLM usprawniło zarządzanie assetami Unreal Engine'
+			'Wdrożenie Helix Core usprawniło zarządzanie assetami Unreal Engine',
+			'R&D oraz wdrażanie rozwiązań VLM dla renderów i kontroli jakości materiałów',
+			'Automatyzacja procesów produkcyjnych z wykorzystaniem agentów i modeli AI'
 		]
 	},
 	{
@@ -115,7 +118,7 @@ const experience = [
 			'Rozwijam projekty backendowe pod okiem seniora: architektura mikroserwisów, ADR oraz testy end-to-end w Django i FastAPI.',
 		metrics: [
 			'Zbudowane aplikacje Animals Healthcare i Be Part of Events z CI/CD oraz monitoringiem',
-			'Ćwiczone praktyki DevOps (Docker, Kubernetes, GitFlow) na projektach open source'
+			'Ćwiczone praktyki DevOps (Docker, Kubernetes, GitFlow) oraz wzorce architektoniczne mikroserwisów'
 		]
 	},
 	{
@@ -445,6 +448,10 @@ const contact = {
 		{
 			label: 'LinkedIn',
 			href: 'https://www.linkedin.com/in/aleksander-marsza%C5%82kiewicz-b826959a'
+		},
+		{
+			label: 'Discord',
+			href: 'https://discord.com/users/422570242275934219'
 		},
 		{ label: 'Email alternatywny', href: 'mailto:aleksander.marszalkiewicz.pp@gmail.com' }
 	]

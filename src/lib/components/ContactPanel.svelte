@@ -31,7 +31,8 @@
 <code>&gt; reach_me --email "{email}"
 &gt; reach_me --alt "aleksander.marszalkiewicz.pp@gmail.com"
 &gt; schedule --cal "{timezone}"
-&gt; connect --channels {JSON.stringify(socials.map((s) => s.label))}</code>
+&gt; connect --channels {JSON.stringify(socials.map((s) => s.label))}
+&gt; ping --discord "422570242275934219"</code>
 		</pre>
 		<div class="flex flex-wrap items-center gap-4">
 			<button
