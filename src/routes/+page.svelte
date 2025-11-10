@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import {
 		ActivityFeed,
 		ContactPanel,
@@ -10,8 +11,6 @@
 		TimelineItem,
 		ToolboxCloud
 	} from '$lib';
-
-	const { data } = $props();
 
 	const navItems = [
 		{ label: 'Hero', href: '#hero' },
@@ -139,8 +138,8 @@ const projects = [
 		title: 'AI Agent for Creative Asset Validation',
 		status: 'Prototype',
 		description:
-			'Streamlitowy agent QA dla materiałów marketingowych: OCR, porównywanie obrazów, research w oparciu o OpenAI/Gemini/Groq i śledzenie w LangSmith.',
-		stack: ['Streamlit', 'LangSmith', 'OpenAI/Gemini', 'Groq'],
+			'Streamlitowy agent QA dla materiałów marketingowych: OCR, porównywanie obrazów, research w oparciu o OpenAI/Gemini i śledzenie w LangSmith.',
+		stack: ['Streamlit', 'LangSmith', 'OpenAI/Gemini'],
 		href: 'https://github.com/Cybernetic-Ransomware/AI_Agent_for_Creative_Asset_Validation'
 	},
 	{
@@ -435,10 +434,118 @@ const fallbackActivityFeed = [
 	}
 ];
 
-const activityFeed = (data?.activityItems?.length ? data.activityItems : fallbackActivityFeed).slice(
-	0,
-	10
-);
+const GITHUB_USERNAME = 'Cybernetic-Ransomware';
+const GITHUB_EVENTS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=10`;
+
+type GithubEvent = {
+	id: string;
+	type: string;
+	created_at: string;
+	repo?: { name?: string };
+	payload?: Record<string, any>;
+};
+
+function mapGithubEvent(event: GithubEvent) {
+	const repo = event.repo?.name ?? GITHUB_USERNAME;
+	const createdAt = event.created_at;
+	const payload = event.payload ?? {};
+
+	let action = event.type.replace(/Event$/, '');
+	let description = '';
+	let href: string | undefined;
+
+	switch (event.type) {
+		case 'PushEvent': {
+			const commits = Array.isArray(payload.commits) ? payload.commits : [];
+			const commitCount = commits.length;
+			const latestCommit = commits.at(-1);
+			action = `Pushed ${commitCount} commit${commitCount === 1 ? '' : 's'}`;
+			description = latestCommit?.message ?? '';
+			href = latestCommit
+				? `https://github.com/${repo}/commit/${latestCommit.sha}`
+				: `https://github.com/${repo}`;
+			break;
+		}
+		case 'PullRequestEvent': {
+			const pr = payload.pull_request ?? {};
+			const prAction = payload.action ?? 'updated';
+			action = `${prAction} PR #${pr.number ?? ''}`.trim();
+			description = pr.title ?? '';
+			href = pr.html_url ?? `https://github.com/${repo}/pulls`;
+			break;
+		}
+		case 'PullRequestReviewEvent': {
+			const pr = payload.pull_request ?? {};
+			action = `Reviewed PR #${pr.number ?? ''}`.trim();
+			description = pr.title ?? '';
+			href = pr.html_url ?? `https://github.com/${repo}/pulls`;
+			break;
+		}
+		case 'IssuesEvent': {
+			const issue = payload.issue ?? {};
+			const issueAction = payload.action ?? 'updated';
+			action = `${issueAction} issue #${issue.number ?? ''}`.trim();
+			description = issue.title ?? '';
+			href = issue.html_url ?? `https://github.com/${repo}/issues`;
+			break;
+		}
+		case 'ReleaseEvent': {
+			const release = payload.release ?? {};
+			action = `Published release ${release.tag_name ?? ''}`.trim();
+			description = release.name ?? release.body ?? '';
+			href = release.html_url ?? `https://github.com/${repo}/releases`;
+			break;
+		}
+		case 'CreateEvent': {
+			action = `Created ${payload.ref_type ?? 'ref'}`;
+			description = payload.description ?? '';
+			href = `https://github.com/${repo}`;
+			break;
+		}
+		default: {
+			description = payload.action ?? '';
+			href = `https://github.com/${repo}`;
+		}
+	}
+
+	return {
+		id: event.id,
+		repo,
+		action,
+		description,
+		href,
+		created_at: createdAt
+	};
+}
+
+let activityItems = $state(fallbackActivityFeed);
+let activityFetchError = $state(false);
+
+onMount(async () => {
+	try {
+		const res = await fetch(GITHUB_EVENTS_URL, {
+			headers: {
+				Accept: 'application/vnd.github+json'
+			},
+			cache: 'no-store'
+		});
+
+		if (!res.ok) {
+			throw new Error(`GitHub responded with ${res.status}`);
+		}
+
+		const events = (await res.json()) as GithubEvent[];
+		const mapped = events.map(mapGithubEvent).slice(0, 10);
+
+		if (mapped.length) {
+			activityItems = mapped;
+			activityFetchError = false;
+		}
+	} catch (error) {
+		console.error('Failed to fetch GitHub activity', error);
+		activityFetchError = true;
+	}
+});
 
 const contact = {
 	email: 'aleksander.marszalkiewicz@protonmail.com',
@@ -580,7 +687,12 @@ const contact = {
 				title="Aktywność i kontrybucje"
 				description="Aktualne inicjatywy – od automatyzacji pipeline’ów po dokumentowanie decyzji architektonicznych."
 			/>
-			<ActivityFeed items={activityFeed} initialVisible={5} maxItems={10} />
+			<ActivityFeed items={activityItems} initialVisible={5} maxItems={10} />
+			{#if activityFetchError}
+				<p class="mt-4 text-xs text-text-muted/70">
+					Nie udało się pobrać świeżych danych z GitHuba — wyświetlam archiwalne wpisy.
+				</p>
+			{/if}
 		</section>
 
 		<NeonDivider />
