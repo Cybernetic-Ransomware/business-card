@@ -1,0 +1,223 @@
+ALEKSANDER
+MARSZAŁKIEWICZ
+PYTHON DEVELOPER
+I am a software developer specializing in backend development, with
+over two years of professional experience in Python and DevOps, as well
+as more than six months of hands-on work with machine learning
+models, especially vision-language models (VLMs).
+My professional background also includes project management,
+implementation of industrial software solutions, and managing
+databases and data warehouses.
+
+CONTACT
++48 737-795-739
+aleksander.marszalkiewicz.pp@gmail.com
+
+ul. Bukowska 18A/23
+60-811 Poznań
+
+https://www.linkedin.com/in/aleksander-marsza%C5%82kiewicz-b826959a
+
+https://github.com/Cybernetic-Ransomware
+
+
+TECH STACK
+Python,
+Docker,
+Django, DRF,
+Docker
+Flask,
+Compose,
+Fast API,
+AWS,
+Dash,
+Kubernetes,
+Streamlit,
+PostgreSQL,
+Pandas,
+Polars,
+Plotly,
+Pytest,
+Playwright,
+Selenium,
+MS SQL,
+SQLite,
+CouchDB,
+Mongo DB,
+S3/MinIO,
+Celery,
+RabbitMQ,
+Kafka,
+GitFlow,
+Scrum, Agile.
+
+
+EXPERIENCE
+Junior Software Developer
+GPD Agency & Film Studio
+
+
+2024- Present
+Integration of software backends, development of custom extensions, and monitoring
+of data flow — primarily for software platforms such as JIRA, Ftrack, Brandfolder, and
+and popular CGI and film editing tools.
+Tech stack: Docker, AWS, Python, Celery, Grafana, Prometeus, Flask, FastAPI, Nvidia
+SMI, OpenAI API, Groovy, Polars, Ruff, Gitflow.
+
+
+Deployment of the Helix Core version control system for Unreal Engine developers.
+Research and deployment of AI tools for text and image processing. Includes local and
+remote training of pretrained VLM models and API interfaces.
+
+Tech stack: PyTorch, Hugging Face, Streamlit, OneTrainer, ComfyUI, Flux, Stable
+Diffusion, WAN, n8n, Docker.
+
+
+Internship
+Devs Mentoring
+2023- Present
+Internship and mentoring in backend software development under the guidance of a senior
+developer mentor. I am training in advanced Python programming, DevOps, and web
+development with Django. I am gaining experience in application architecture, incremental
+task work, and documenting functionality using ADR (Architecture Decision Records).
+
+Example Projects
+
+Animals Healthcare Application
+A web application for managing medical notes for caregivers r esponsible for multiple
+animals.
+https://github.com/Cybernetic-Ransomware
+Tech stack: Python 3.12, Django 4.2, Celery, PostgreSQL, CouchDB, Docker Compose,
+Kubernetes.
+
+Be Part of Events
+A microservice-based backend for efficient bill splitting and expense tracking during
+group events (e.g., going out with friends). Includes automated OCR-based bill
+recognition and invitation-based settlement.
+https://github.com/Cybernetic-Ransomware/bpoe-api-gateway
+
+Tech stack: Python 3.13, UV, FastAPI, TimescaleDB, Amazon S3, Tesseract OCR, Apache
+Kafka, Sentry, Auth0, Docker Compose.
+
+Administrator ERP
+Centrum Usług Wspólnych Chata Polska Sp. z o.o.
+2023- 2024
+Participant in the ERP software migration project.
+Ongoing maintenance of data warehouses, ERP, WMS and CRM systems.
+Troubleshooting synchronization errors.
+Creating, maintaining and expanding reports using SQL and scripting programing
+languages.
+
+
+
+ERP Consultant
+Integris Systemy IT Sp. z o.o.
+2022- 2022
+Support for Microsoft Dynamics 365 system implementations in the areas of
+production and post-production departments.
+Data importing, manual testing of functional modifications, creating reports and
+interactive dashboards, training users.
+
+
+Project Manager
+Promag S. A.
+2017- 2022
+Project management in the field of machine construction and technological transport
+automation.
+
+
+EDUCATION
+POZNAŃ UNIVERSITY OF TECHNOLOGY
+2016 - 2017
+Faculty of Mechanical Engineering and Management
+Major: Management and Production Engineering
+Specialization: Production Systems
+Full-time, Master's degree completed without thesis,
+2015- 2018
+Faculty of Mechanical Engineering and Management
+Major: Mechatronics
+Specialization: Production Systems
+Full-time/part-time, Bachelor's degree, concurrently pursuing a second major,
+
+2012- 2016
+Faculty of Engineering Management
+Major: Safety Engineering
+Full-time, Bachelor's degree completed.
+
+
+PERSONALITY
+As an introverted software developer,
+I thrive when working independently
+and focusing deeply on tasks, allowing
+me to tackle complex coding problems
+effectively.
+
+My intuitive nature helps me envision
+innovative solutions and see the bigger
+picture, which is crucial for developing
+forward-thinking applications.
+
+My strong thinking trait ensures that I
+approach problems logically and analytically,
+making well-reasoned decisions in my coding
+processes.
+
+Being judging-oriented, I excel at
+planning and organizing my work,
+sticking to schedules and meeting deadlines reliably.
+
+Finally, my assertive personality gives me the confidence to take on challenges and handle
+criticism constructively, which is essential for continuous improvement and collaboration
+in a dynamic tech environment.
+
+
+INTERESTS
+Science fiction,
+Pen-and-paper RPG,
+Japanese culture,
+Social psychology,
+Engineering and new technologies,
+3D modelling and printing.
+
+
+VOLUNTARY
+Global Management Challenge - taking
+the competition as the leader of a five-
+person management team for a virtual
+enterprise (2015),
+
+Volunteer work as part of the information
+services for the Game Industry
+Conference during the three-day Poznań
+Game Arena trade fair (2015),
+
+Participation in trade fairs and industry
+conferences and as a listener in computer
+science standups, like: AI & Tech Talks,
+PyRa.
+
+
+CERTIFICATES
+
+B2 Language Proficiency Certificate
+in English,
+
+Certificates from Udemy courses e.g.:
+Object-Oriented Programming
+in Python - From A to Z (2020),
+
+Introduction to Data Science
+in Python - Pandas (2020),
+
+Interactive Data Visualizations
+in Python - Plotly (2021),
+
+Object-Oriented Programming
+in Python - OOP - From A to Z (2021),
+
+Unit Testing in Python - unittest
+Framework (2021),
+
+Create Modern Web Applications
+in Python - Dash, Plotly (2022).
+

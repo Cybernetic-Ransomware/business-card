@@ -1,0 +1,25 @@
+# Normalize line endings for text files
+* text=auto
+
+# Force LF endings for source files
+*.js text eol=lf
+*.ts text eol=lf
+*.svelte text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Scripts
+*.sh text eol=lf
+*.ps1 text eol=crlf
+
+# Images / binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.ico binary
