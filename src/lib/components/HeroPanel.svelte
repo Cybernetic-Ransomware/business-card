@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import ThermalKatanaScene from './ThermalKatanaScene.svelte';
 
 export type Cta = {
 	label: string;
@@ -71,9 +72,7 @@ export type Cta = {
 		</div>
 
 		<div class="relative flex items-center justify-center md:justify-end">
-			<div class="flex h-64 w-64 items-center justify-center rounded-2xl border border-white/10 bg-surface/60 text-sm uppercase tracking-[0.28em] text-text-muted/70">
-				visual slot
-			</div>
+			<ThermalKatanaScene />
 		</div>
 	</div>
 </section>
