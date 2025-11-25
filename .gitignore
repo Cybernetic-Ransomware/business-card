@@ -42,4 +42,4 @@ logs/
 *.tgz
 
 # Generated assets
-static/cv/*.pdf
+# static/cv/*.pdf
