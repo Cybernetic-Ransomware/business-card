@@ -64,7 +64,7 @@
 		const handleMove = (e: MouseEvent) => {
 			if (!bambooRef) return;
 
-			if (lastX === null) {
+			if (lastX === null || lastY === null) {
 				lastX = e.clientX;
 				lastY = e.clientY;
 				return;
@@ -76,8 +76,10 @@
 			const dt = now - lastTime;
 			if (dt < 10) return;
 
-			const dx = e.clientX - lastX;
-			const dy = e.clientY - lastY;
+			const prevX = lastX as number;
+			const prevY = lastY as number;
+			const dx = e.clientX - prevX;
+			const dy = e.clientY - prevY;
 			const speed = Math.hypot(dx, dy);
 			const rect = bambooRef.getBoundingClientRect();
 
@@ -321,7 +323,7 @@
 		z-index: 5;
 	}
 
-	.slash-anim {
+	:global(.slash-anim) {
 		animation: slashFlash 0.25s ease-out forwards;
 	}
 

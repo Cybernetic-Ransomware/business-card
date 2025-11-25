@@ -32,14 +32,14 @@
 	const clamp = (value: number, min: number, max: number) =>
 		Math.max(min, Math.min(max, value));
 
-	const eyeOffset = $derived(() => ({
+	const eyeOffset = $derived({
 		x: clamp(direction.x, -1, 1) * 0.85,
 		y: clamp(direction.y, -1, 1) * 0.5
-	}));
+	} satisfies Direction);
 
-	const intensity = $derived(() => clamp(Math.hypot(direction.x, direction.y), 0, 1));
-	const tone = $derived(() => 0.6 + clamp(intensity * 0.35, 0, 0.35));
-	const glowOpacity = $derived(() => 0.35 + intensity * 0.45 + (active ? 0.12 : 0));
+	const intensity = $derived(clamp(Math.hypot(direction.x, direction.y), 0, 1));
+	const tone = $derived(0.6 + clamp(intensity * 0.35, 0, 0.35));
+	const glowOpacity = $derived(0.35 + intensity * 0.45 + (active ? 0.12 : 0));
 </script>
 
 <div

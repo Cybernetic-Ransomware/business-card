@@ -11,6 +11,7 @@
 		TimelineItem,
 		ToolboxCloud
 	} from '$lib';
+	import type { Cta } from '$lib/components/HeroPanel.svelte';
 
 	const navItems = [
 		{ label: 'Hero', href: '#hero' },
@@ -21,6 +22,13 @@
 		{ label: 'Pulse', href: '#pulse' },
 		{ label: 'Contact', href: '#contact' }
 	];
+
+	type HeroSection = {
+		name: string;
+		role: string;
+		tagline: string;
+		ctas: Cta[];
+	};
 
 const hero = {
 	name: 'Aleksander Marszałkiewicz',
@@ -47,7 +55,7 @@ const hero = {
 			variant: 'ghost'
 		}
 	]
-};
+} satisfies HeroSection;
 
 const techStack = [
 	{
