@@ -1,6 +1,6 @@
 # ⚡ Aleksander Marszałkiewicz - Netrunner Portfolio
 
-![System Status](https://img.shields.io/badge/SYSTEM-ONLINE-00FF9F?style=for-the-badge)
+![System Status](https://img.shields.io/website?url=https%3A%2F%2Fcr-business-card-single.statichost.page%2F&up_message=ONLINE&down_message=OFFLINE&style=for-the-badge&label=SYSTEM&color=00FF9F)
 ![Tech Stack](https://img.shields.io/badge/SVELTE_KIT-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/TAILWIND_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -36,7 +36,7 @@ To jack into the system locally:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repo-url>
+    git clone https://github.com/Cybernetic-Ransomware/business-card.git
     cd wz
     ```
 
@@ -67,6 +67,27 @@ To preview the production build locally:
 npm run preview
 ```
 
+## ☁️ Deployment (statichost.eu)
+
+This project is optimized for **statichost.eu**. You have two primary ways to deploy:
+
+### Option A: Git Integration (Recommended)
+Connect your GitHub repository directly in the statichost.eu panel.
+1.  Push your code to the repository.
+2.  Statichost will detect the changes, run `npm install` and `npm run build` automatically.
+3.  **Build Command:** `npm run build`
+4.  **Output Directory:** `build`
+
+### Option B: ZIP Upload (Manual)
+If you prefer to build locally and upload the artifact:
+1.  Run the build command locally:
+    ```bash
+    npm run build
+    ```
+2.  Go to the `build/` directory created in your project root.
+3.  **Compress the contents** of the `build/` folder (index.html, _app, etc.) into a `.zip` file.
+4.  Upload this `.zip` file directly to the statichost.eu dashboard.
+
 ## 📂 Project Structure
 
 ```text
@@ -93,5 +114,3 @@ The visual identity follows the **"Neon Cyberpunk Brief"**:
 | **Background** | Void Black | `#05060A` |
 
 ---
-
-*System Output: End of Line.*
