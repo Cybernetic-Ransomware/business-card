@@ -85,8 +85,16 @@ If you prefer to build locally and upload the artifact:
     npm run build
     ```
 2.  Go to the `build/` directory created in your project root.
-3.  **Compress the contents** of the `build/` folder (index.html, _app, etc.) into a `.zip` file.
-4.  Upload this `.zip` file directly to the statichost.eu dashboard.
+3.  This project uses an SPA fallback, so the main entry is `200.html` (not `index.html`). **Zip the entire `build/` directory** (`200.html`, `_app`, assets) into a single archive.
+4.  Statichost.eu expects `index.html`, so before zipping copy the fallback: `cp build/200.html build/index.html`.
+5.  Upload this `.zip` file directly to the statichost.eu dashboard. The validator may warn about a missing `index.html`; adding the duplicate silences it.
+
+Quick commands:
+```bash
+npm run build
+cp build/200.html build/index.html
+(cd build && zip -r ../site.zip .)
+```
 
 ## 📂 Project Structure
 
