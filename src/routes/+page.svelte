@@ -105,11 +105,18 @@ const techStack = [
 
 const experience = [
 	{
+		title: 'Software Developer',
+		period: '2026 — obecnie',
+		organization: 'Labo Print S.A.',
+		description: 'Opis do uzupełnienia.',
+		metrics: ['Placeholder — osiągnięcie #1', 'Placeholder — osiągnięcie #2', 'Placeholder — osiągnięcie #3']
+	},
+	{
 		title: 'Junior Software Developer',
-		period: '2024 — obecnie',
+		period: '2024 — 2025',
 		organization: 'GPD Agency & Film Studio',
 		description:
-			'Integruję backendy platform produkcyjnych (JIRA, Ftrack, Brandfolder) z pipeline’ami CGI i tworzę rozszerzenia pod potrzeby zespołów artystycznych.',
+			'Integruję backendy platform produkcyjnych (JIRA, Ftrack, Brandfolder) z pipeline’ami CGI, projektując dedykowane rozszerzenia dla zespołów artystycznych. Projektuję i wdrażam od podstaw aplikacje oraz narzędzia oparte na agentach AI, które automatyzują procesy produkcji.',
 		metrics: [
 			'Orkiestracja usług Celery/FastAPI monitorowanych w Grafanie i Prometheusie',
 			'Wdrożenie Helix Core usprawniło zarządzanie assetami Unreal Engine',
@@ -133,7 +140,7 @@ const experience = [
 		period: '2023 — 2024',
 		organization: 'Centrum Usług Wspólnych Chata Polska',
 		description:
-			'Utrzymywałem hurtownie danych oraz systemy ERP/WMS/CRM w trakcie migracji platformy, automatyzując raportowanie SQL.',
+			'Odpowiadałem za utrzymanie i rozwój hurtowni danych wraz z raportami i automatyzacjami SQL. Zapewniałem ciągłość działania ERP oraz prowadziłem konsultacje biznesowe w ramach projektu wyboru nowej platformy ERP.',
 		metrics: [
 			'Triage i naprawa błędów synchronizacji między ERP a magazynem danych',
 			'Budowa i utrzymanie raportów analitycznych dla biznesu na bazie MS SQL'
@@ -142,6 +149,22 @@ const experience = [
 ];
 
 const projects = [
+	{
+		title: 'Harmonogram AI',
+		status: 'Prototype',
+		description:
+			'Desktop Tauri do wczytywania harmonogramów z Excela, pobierania danych z Jiry (JQL) i analizy z asystentem OpenAI, z cache’em w SQLite i przetwarzaniem w Polars.',
+		stack: ['Tauri', 'React', 'Rust', 'Polars', 'SQLite', 'OpenAI'],
+		href: 'https://github.com/Cybernetic-Ransomware/jira-schedulerAI-desktop-tauri'
+	},
+	{
+		title: 'Dockerized OneTrainer',
+		status: 'Production',
+		description:
+			'Konteneryzowane środowisko OneTrainer na Windows/WSL2 z akceleracją RTX (CUDA 13) i lokalnym MinIO dla danych treningowych.',
+		stack: ['Docker Compose', 'CUDA 13', 'MinIO', 'WSL2'],
+		href: 'https://github.com/Cybernetic-Ransomware/dockerized_onetrainer'
+	},
 	{
 		title: 'AI Agent for Creative Asset Validation',
 		status: 'Prototype',
@@ -354,10 +377,6 @@ const backlogProjects = [
 		href: 'https://github.com/Cybernetic-Ransomware/GPT_batches_api'
 	},
 	{
-		title: 'dockerized_onetrainer',
-		href: 'https://github.com/Cybernetic-Ransomware/dockerized_onetrainer'
-	},
-	{
 		title: '_template_material_for_MkDocs',
 		href: 'https://github.com/Cybernetic-Ransomware/_template_material_for_MkDocs'
 	},
@@ -412,33 +431,90 @@ const toolboxTags = [
 		label: 'LLM Studio',
 		category: 'AI Ops',
 		description: 'Eksperymenty z trenowaniem i optymalizacją modeli LLM w środowisku on-prem.'
+	},
+	{
+		label: 'GitHub Actions · UV/Poetry',
+		category: 'CI/CD',
+		description: 'Pipeline’y lint/test/coverage dla FastAPI, Tauri i agentów AI z cache’owaniem zależności.'
+	},
+	{
+		label: 'TimescaleDB · PostgreSQL',
+		category: 'Data',
+		description: 'Hurtownie i hypertable dla telemetry/ERP, migracje i optymalizacja zapytań SQL.'
+	},
+	{
+		label: 'MinIO · S3',
+		category: 'Storage',
+		description: 'Przechowywanie assetów, logów i załączników agentów z politykami retencji i backupami.'
+	},
+	{
+		label: 'Terraform · Ansible',
+		category: 'Infrastructure',
+		description: 'Provisioning on-prem/edge dla storage, GPU i usług API z kontrolą wersji IaC.'
+	},
+	{
+		label: 'ADR · PlantUML',
+		category: 'Architecture',
+		description: 'Decyzje architektoniczne i diagramy przepływów dla mikroserwisów i integracji.'
 	}
 ];
 
 const fallbackActivityFeed = [
 	{
-		repo: 'gpd-integrations',
-		action: 'Deployed JIRA ↔ Ftrack sync service',
-		description: 'FastAPI + Celery streaming metadata aktualizujące assety CGI w czasie rzeczywistym.',
-		created_at: new Date('2025-04-12T10:00:00Z').toISOString()
+		repo: 'Cybernetic-Ransomware/bpoe-api-gateway',
+		action: 'Pushed changes (19)',
+		description: 'Refaktoryzacja rozliczeń i kolejki Kafka dla billingów grupowych.',
+		href: 'https://github.com/Cybernetic-Ransomware/bpoe-api-gateway',
+		created_at: '2025-12-15T13:58:11Z'
 	},
 	{
-		repo: 'helix-core-toolchain',
-		action: 'Added GPU telemetry dashboard',
-		description: 'Eksport danych z Nvidia SMI do Prometheusa i wizualizacja w Grafanie.',
-		created_at: new Date('2025-03-28T14:30:00Z').toISOString()
+		repo: 'Cybernetic-Ransomware/Granian_Quart_ASGI_Compare',
+		action: 'Pushed changes (6)',
+		description: 'Porównanie Granian/Quart ASGI pod API streamingowe.',
+		href: 'https://github.com/Cybernetic-Ransomware/Granian_Quart_ASGI_Compare',
+		created_at: '2025-12-10T09:00:00Z'
 	},
 	{
-		repo: 'animals-healthcare',
-		action: 'Merged feature/ward-notes',
-		description: 'Nowy moduł notatek z asynchronicznym wysyłaniem powiadomień Celery.',
-		created_at: new Date('2025-02-18T08:45:00Z').toISOString()
+		repo: 'Cybernetic-Ransomware/template_tauri_basic_crud',
+		action: 'Pushed changes (5)',
+		description: 'Szablon Tauri + React z CRUD i bundlowaniem.',
+		href: 'https://github.com/Cybernetic-Ransomware/template_tauri_basic_crud',
+		created_at: '2025-12-02T12:00:00Z'
 	},
 	{
-		repo: 'bpoe-api-gateway',
-		action: 'Documented ADR-012 billing-split',
-		description: 'Opis architektury OCR + Kafka dla rozliczeń grupowych.',
-		created_at: new Date('2025-01-30T16:15:00Z').toISOString()
+		repo: 'Cybernetic-Ransomware/dockerized_onetrainer',
+		action: 'Pushed changes (4)',
+		description: 'Konteneryzacja OneTrainer z CUDA 13 i MinIO.',
+		href: 'https://github.com/Cybernetic-Ransomware/dockerized_onetrainer',
+		created_at: '2025-12-05T11:00:00Z'
+	},
+	{
+		repo: 'Cybernetic-Ransomware/business-card',
+		action: 'Pushed changes (2)',
+		description: 'Aktualizacje komponentów Svelte i layoutu.',
+		href: 'https://github.com/Cybernetic-Ransomware/business-card',
+		created_at: '2025-12-03T15:00:00Z'
+	},
+	{
+		repo: 'Cybernetic-Ransomware/rust-axum-postgres-api',
+		action: 'Created repository',
+		description: 'Szkielet API Axum + Postgres + sqlx + Docker.',
+		href: 'https://github.com/Cybernetic-Ransomware/rust-axum-postgres-api',
+		created_at: '2025-12-02T10:00:00Z'
+	},
+	{
+		repo: 'Cybernetic-Ransomware/Cybernetic-Ransomware',
+		action: 'Created repository',
+		description: 'Metarepo z configami CI/CD i skryptami automatyzacji.',
+		href: 'https://github.com/Cybernetic-Ransomware/Cybernetic-Ransomware',
+		created_at: '2025-12-01T18:00:00Z'
+	},
+	{
+		repo: 'Cybernetic-Ransomware/business-card',
+		action: 'Pushed changes (6)',
+		description: 'Ulepszenia dostępności i animacji.',
+		href: 'https://github.com/Cybernetic-Ransomware/business-card',
+		created_at: '2025-11-20T10:00:00Z'
 	}
 ];
 
@@ -453,10 +529,24 @@ type GithubEvent = {
 	payload?: Record<string, any>;
 };
 
+type ActivityItem = {
+	id?: string;
+	repo: string;
+	action: string;
+	description?: string;
+	href?: string;
+	created_at?: string;
+	branch?: string;
+	kind?: string;
+	count?: number;
+};
+
 function mapGithubEvent(event: GithubEvent) {
 	const repo = event.repo?.name ?? GITHUB_USERNAME;
 	const createdAt = event.created_at;
 	const payload = event.payload ?? {};
+	const branch =
+		typeof payload.ref === 'string' ? payload.ref.split('/').filter(Boolean).pop() : undefined;
 
 	let action = event.type.replace(/Event$/, '');
 	let description = '';
@@ -465,14 +555,30 @@ function mapGithubEvent(event: GithubEvent) {
 	switch (event.type) {
 		case 'PushEvent': {
 			const commits = Array.isArray(payload.commits) ? payload.commits : [];
-			const commitCount = commits.length;
+			const payloadCount = typeof payload.size === 'number' ? payload.size : undefined;
+			const commitCount = payloadCount ?? commits.length ?? 0;
 			const latestCommit = commits.at(-1);
-			action = `Pushed ${commitCount} commit${commitCount === 1 ? '' : 's'}`;
-			description = latestCommit?.message ?? '';
-			href = latestCommit
+			action =
+				commitCount > 0
+					? `Pushed ${commitCount} commit${commitCount === 1 ? '' : 's'}`
+					: 'Pushed changes';
+			description =
+				latestCommit?.message ?? (branch ? `Aktualizacja gałęzi ${branch}` : 'Aktualizacja zmian');
+			href = latestCommit?.sha
 				? `https://github.com/${repo}/commit/${latestCommit.sha}`
 				: `https://github.com/${repo}`;
-			break;
+			// Carry branch/kind/count for later aggregation.
+			return {
+				id: event.id,
+				repo,
+				action,
+				description,
+				href,
+				created_at: createdAt,
+				branch,
+				kind: event.type,
+				count: Math.max(commitCount, 1)
+			};
 		}
 		case 'PullRequestEvent': {
 			const pr = payload.pull_request ?? {};
@@ -522,8 +628,90 @@ function mapGithubEvent(event: GithubEvent) {
 		action,
 		description,
 		href,
-		created_at: createdAt
+		created_at: createdAt,
+		branch,
+		kind: event.type,
+		count: 1
 	};
+}
+
+function dayKey(iso?: string) {
+	if (!iso) return 'unknown';
+	const ts = Date.parse(iso);
+	if (Number.isNaN(ts)) return 'unknown';
+	return new Date(ts).toISOString().slice(0, 10);
+}
+
+function aggregateActivity(items: ActivityItem[]) {
+	const buckets = new Map<string, ActivityItem>();
+
+	for (const item of items) {
+		const day = dayKey(item.created_at);
+		const branch = item.branch ?? '';
+		const kind = item.kind ?? '';
+
+		// Aggregate push events by repo + branch + day to avoid many near-identical rows.
+		if (kind === 'PushEvent') {
+			const key = `${item.repo}|${branch}|${day}|push`;
+			const existing = buckets.get(key);
+
+			if (!existing) {
+				buckets.set(key, { ...item });
+			} else {
+				existing.count = (existing.count ?? 1) + (item.count ?? 1);
+				// Keep newest created_at (list is already newest-first).
+			}
+			continue;
+		}
+
+		// Default: de-dupe identical repo/action/description per day.
+		const defaultKey = `${item.repo}|${item.action}|${item.description ?? ''}|${day}`;
+		if (!buckets.has(defaultKey)) {
+			buckets.set(defaultKey, { ...item });
+		}
+	}
+
+	const aggregated = Array.from(buckets.values()).sort((a, b) => {
+		const aDate = a.created_at ? Date.parse(a.created_at) : 0;
+		const bDate = b.created_at ? Date.parse(b.created_at) : 0;
+		return bDate - aDate;
+	});
+
+	return aggregated.map((item) => {
+		if (item.kind === 'PushEvent' && (item.count ?? 1) > 1) {
+			return {
+				...item,
+				action: `${item.action} (${item.count})`,
+				description: item.description
+			};
+		}
+		return item;
+	});
+}
+
+function activityKey(item: ActivityItem) {
+	return `${item.repo}`;
+}
+
+function padWithFallback(primary: ActivityItem[], fallback: ActivityItem[], limit = 10) {
+	const existing = new Set(primary.map(activityKey));
+	const merged = [...primary];
+
+	for (const fb of fallback) {
+		const key = activityKey(fb);
+		if (existing.has(key)) continue;
+		merged.push(fb);
+		existing.add(key);
+		if (merged.length >= limit) break;
+	}
+
+	return merged
+		.sort((a, b) => {
+			const aDate = a.created_at ? Date.parse(a.created_at) : 0;
+			const bDate = b.created_at ? Date.parse(b.created_at) : 0;
+			return bDate - aDate;
+		})
+		.slice(0, limit);
 }
 
 let activityItems = $state(fallbackActivityFeed);
@@ -543,10 +731,14 @@ onMount(async () => {
 		}
 
 		const events = (await res.json()) as GithubEvent[];
-		const mapped = events.map(mapGithubEvent).slice(0, 10);
+		const mapped = events.map(mapGithubEvent).slice(0, 30);
+		const aggregated = aggregateActivity(mapped);
+		const distinctRepos = new Set(aggregated.map((i) => i.repo)).size;
+		const base = distinctRepos >= 3 ? aggregated : aggregated.slice(0, 1);
+		const merged = padWithFallback(base, fallbackActivityFeed, 10);
 
-		if (mapped.length) {
-			activityItems = mapped;
+		if (merged.length) {
+			activityItems = merged;
 			activityFetchError = false;
 		}
 	} catch (error) {
